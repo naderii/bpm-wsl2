@@ -1,21 +1,14 @@
-MIT License
+مجوز MIT
 
-Copyright (c) 2025 Nader Naderi
+حق‌تکثیر © ۲۰۲۵ نادر نادری
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+به هر شخصی که یک نسخه از این نرم‌افزار و فایل‌های مستندات مربوط به آن (که از این پس "نرم‌افزار" نامیده می‌شود) را دریافت می‌کند، به صورت رایگان اجازه داده می‌شود که بدون هیچ محدودیتی، از نرم‌افزار استفاده کند؛
+از جمله، اما نه محدود به، حقوق استفاده، کپی، اصلاح، ادغام، انتشار، توزیع، زیرمجوزدهی (Sub-license) و یا فروش نسخه‌های نرم‌افزار.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+با این حال، شرایط زیر باید رعایت شوند:
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+این اطلاعیه‌ی حق‌تکثیر و این مجوز باید در تمام نسخه‌ها یا بخش‌های قابل توجهی از نرم‌افزار درج شود.
+
+نرم‌افزار به همان شکلی که هست (AS IS) ارائه می‌شود و هیچ‌گونه ضمانتی، چه به صورت صریح و چه ضمنی، شامل ولی نه محدود به ضمانت بابت قابلیت فروش، کارکرد خاص یا عدم نقض حقوق، ارائه نمی‌گردد.
+
+در هیچ حالتی، نویسندگان یا دارندگان حق‌تکثیر، مسئول هیچ‌گونه ادعا، خسارت یا سایر مسئولیت‌ها، چه در قرارداد، چه در خطا (Tort) یا به هر نحو دیگری که از نرم‌افزار یا استفاده از آن یا سایر ارتباطات با نرم‌افزار ناشی شده باشد، نخواهند بود.
