@@ -6,18 +6,18 @@ echo   Starting ProcessMaker Dev Environment
 echo ==============================================
 echo.
 
-:: رفتن به مسیر فعلی پروژه
+:: Navigate to the current project directory
 cd /d %~dp0
 
-:: اجرای Docker Compose
+:: Run Docker Compose
 docker-compose up -d
 
 if errorlevel 1 (
-    echo ❌ اجرای docker-compose با خطا مواجه شد.
+    echo ❌ Docker Compose failed to start.
     pause
     exit /b 1
 )
 
-echo ✔ تمام سرویس‌ها اجرا شدند.
-echo برای توقف سرویس‌ها stop-dev.bat را اجرا کنید.
+echo ✔ All services are up and running.
+echo To stop the services, run stop-dev.bat.
 pause

@@ -1,5 +1,6 @@
 @echo off
-setlocal
+chcp 65001 >nul
+setlocal EnableDelayedExpansion
 title ProcessMaker Dev Environment Setup
 
 echo ==============================================
@@ -7,66 +8,67 @@ echo   ProcessMaker Dev Setup - Automated Script
 echo ==============================================
 echo.
 
-:: چک کردن نسخه ویندوز
+:: Check Windows version
 ver | findstr /C:"10." >nul
 if errorlevel 1 (
-    echo ❌ این اسکریپت فقط روی ویندوز 10 و 11 کار می‌کند.
+    echo ❌ This script only works on Windows 10 and 11.
     pause
     exit /b 1
 )
 
-:: فعال کردن WSL و Virtual Machine Platform
-echo ▶ فعال‌سازی WSL2 و Virtual Machine Platform...
+:: Enable WSL2 and Virtual Machine Platform
+echo ▶ Enabling WSL2 and Virtual Machine Platform...
 powershell -Command "dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart"
 powershell -Command "dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart"
 
-:: تنظیم WSL نسخه 2 به عنوان پیش‌فرض
-echo ▶ تنظیم WSL2 به عنوان نسخه پیش‌فرض...
+:: Set WSL2 as default
+echo ▶ Setting WSL2 as the default version...
 wsl --set-default-version 2
 
-:: بررسی نصب Ubuntu-22.04
-echo ▶ بررسی نصب Ubuntu-22.04 ...
+:: Check if Ubuntu-22.04 is available
+echo ▶ Checking for Ubuntu-22.04 availability...
 wsl --list --online | findstr "Ubuntu-22.04" >nul
 if errorlevel 1 (
-    echo ❌ نسخه Ubuntu-22.04 در دسترس نیست. لطفاً دستی نصب کنید.
+    echo ❌ Ubuntu-22.04 is not available. Please install it manually.
     pause
     exit /b 1
 )
 
+:: Install Ubuntu-22.04 if not already installed
 wsl --list | findstr "Ubuntu-22.04" >nul
 if errorlevel 1 (
-    echo ▶ نصب Ubuntu-22.04 ...
+    echo ▶ Installing Ubuntu-22.04...
     wsl --install -d Ubuntu-22.04
 ) else (
-    echo ✔ Ubuntu-22.04 قبلاً نصب شده است.
+    echo ✔ Ubuntu-22.04 is already installed.
 )
 
-:: بررسی نصب Docker Desktop
-echo ▶ بررسی نصب Docker Desktop...
+:: Check if Docker Desktop is installed
+echo ▶ Checking for Docker Desktop...
 where docker >nul 2>nul
 if errorlevel 1 (
-    echo ❌ Docker Desktop نصب نیست.
-    echo لطفاً Docker Desktop را نصب کنید و دوباره این اسکریپت را اجرا کنید.
+    echo ❌ Docker Desktop is not installed.
+    echo Please install Docker Desktop and rerun this script.
     pause
     exit /b 1
 ) else (
-    echo ✔ Docker Desktop شناسایی شد.
+    echo ✔ Docker Desktop detected.
 )
 
-:: تست اجرای Docker
-echo ▶ تست اجرای Docker...
+:: Test Docker
+echo ▶ Testing Docker...
 docker run --rm hello-world
 
 if errorlevel 1 (
-    echo ❌ Docker به درستی اجرا نشد.
-    echo لطفاً تنظیمات WSL2 Backend در Docker Desktop را بررسی کنید.
+    echo ❌ Docker did not run successfully.
+    echo Please check WSL2 backend settings in Docker Desktop.
     pause
     exit /b 1
 )
 
 echo ==============================================
-echo ✔ آماده‌سازی اولیه کامل شد.
-echo حالا می‌توانید با اجرای start-dev.bat محیط را راه‌اندازی کنید.
+echo ✔ Initial setup is complete.
+echo You can now run start-dev.bat to launch the environment.
 echo ==============================================
 pause
 endlocal
